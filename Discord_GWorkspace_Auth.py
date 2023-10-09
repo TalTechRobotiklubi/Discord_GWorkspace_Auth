@@ -39,7 +39,7 @@ class Bot:
         async def create_auth_url_embed(authorization_url):
             embed = discord.Embed(title="Getting a role", description="", color=0x00ff00)
             embed.add_field(name="", value=f"", inline=False)
-            embed.add_field(name="", value=f"write CANCEL to cancel this process, GET_ROLE to start again",
+            embed.add_field(name="", value=f"write CANCEL in this chat to cancel this process or GET_ROLE to start again",
                             inline=False)
             embed.add_field(name="", value=f"", inline=False)
             embed.add_field(name="", value=f"If you dont answer within 120s you will have to restart this process",
