@@ -1,11 +1,9 @@
 import json
 import os
 import re
-from asyncio import CancelledError
 
 import discord
 from dotenv import load_dotenv
-from google.oauth2.credentials import Credentials
 from google_auth_oauthlib.flow import Flow, InstalledAppFlow
 from googleapiclient import discovery
 
