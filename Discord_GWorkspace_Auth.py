@@ -30,7 +30,7 @@ GROUP_ROLE_PAIRS = {
     "vilistlased@robotiklubi.ee": "Vilistlane",
     # "kursandid@robotiklubi.ee": "Kursant"
 }
-EMAIL_MEMBERS = {}
+global_GROUP_MEMBER_PAIRS = {}
 
 
 class Bot:
@@ -105,7 +105,7 @@ class Bot:
                 'https://www.googleapis.com/userinfo/v2/me').json()
 
             user_in_groups = []
-            for email, members in EMAIL_MEMBERS.items():
+            for email, members in global_GROUP_MEMBER_PAIRS.items():
                 if profile_info['email'] in members:
                     user_in_groups.append(email)
 
@@ -139,7 +139,7 @@ class Bot:
                 for member in members:
                     member_emails.append(member.get('email', []))
                 # Update groups list
-                EMAIL_MEMBERS[email] = member_emails
+                global_GROUP_MEMBER_PAIRS[email] = member_emails
 
         # INITIALIZE DISCORD CLIENT
         self.client = discord.Client(intents=intents)
@@ -196,7 +196,8 @@ class Bot:
                     # THE USER HAS TO LOGIN WITH A WORKSPACE ACCOUNT THAT HAS VISIBILITY OF GROUPS
                     await refresh_members_list(message)
 
-                    await message.author.send(f"Keys: {EMAIL_MEMBERS.keys()}\nSuccessfully loaded members lists")
+                    await message.author.send(
+                        f"Keys: {global_GROUP_MEMBER_PAIRS.keys()}\nSuccessfully loaded members lists")
 
         # Run the bot
         self.client.run(token)
