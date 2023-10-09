@@ -38,13 +38,17 @@ class Bot:
 
         async def create_auth_url_embed(authorization_url):
             embed = discord.Embed(title="Getting a role", description="", color=0x00ff00)
+            embed.add_field(name="", value=f"", inline=False)
+            embed.add_field(name="", value=f"write CANCEL to cancel this process, GET_ROLE to start again",
+                            inline=False)
+            embed.add_field(name="", value=f"", inline=False)
+            embed.add_field(name="", value=f"If you dont answer within 120s you will have to restart this process",
+                            inline=False)
+            embed.add_field(name="", value=f"", inline=False)
             embed.add_field(name="Step 1", value="Click on the link given below", inline=False)
             embed.add_field(name="Step 2", value="Login. Ignore the \"This site can’t be reached\" error", inline=False)
             embed.add_field(name="Step 3", value="Post the resulting URL in this chat", inline=False)
             embed.add_field(name="Link", value=f"[Click me!]({authorization_url})", inline=False)
-            embed.add_field(name="", value=f"", inline=False)
-            embed.add_field(name="", value=f"write CANCEL to cancel this process, GET_ROLE to start again",
-                            inline=False)
             return embed
 
         async def handle_response(response, state, member):
