@@ -4,9 +4,9 @@ on: [push]
 permissions:
   contents: read
 jobs:
-  build:
+  run:
     runs-on: self-hosted
-
+    timeout-minutes: 525600
     steps:
     - uses: actions/checkout@v3
     - name: Set up Python 3.10
