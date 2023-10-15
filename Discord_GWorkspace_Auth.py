@@ -93,7 +93,7 @@ class Bot:
                                                       timeout=120.0)
             except Exception:
                 print("Timed out")
-                await member.send("Timed out")
+                await member.send("Timed out, type GET_ROLE to start again")
                 raise Exception("Role setting process timed out")
 
             await handle_response(response, state, member)
