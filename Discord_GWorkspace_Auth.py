@@ -27,6 +27,7 @@ GUILD = "Robotiklubi"
 GROUP_ROLE_PAIRS = {
     "juhatus@robotiklubi.ee": "Juhatus",
     "liikmed@robotiklubi.ee": "Liige",
+    "aktivistid@robotiklubi.ee": "Liige",
     "vilistlased@robotiklubi.ee": "Vilistlane",
     # "kursandid@robotiklubi.ee": "Kursant"
 }
