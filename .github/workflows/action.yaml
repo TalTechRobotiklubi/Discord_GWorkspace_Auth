@@ -1,4 +1,3 @@
-# C
 name: Python application
 on: [push]
 permissions:
