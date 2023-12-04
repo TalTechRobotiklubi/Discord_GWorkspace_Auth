@@ -1,4 +1,4 @@
-name: Python application
+name: Python app
 on: [push]
 permissions:
   contents: read
